@@ -29,8 +29,8 @@ class NotesPage extends StatelessWidget {
                   icon: Icon(Icons.delete),
                   onPressed: () async {
                     final hiveService = HiveService<Note>(boxName: 'notes');
-                    await hiveService.init(); // HiveService'i başlat
-                    await hiveService.removeItem(note.id); // Anahtar kullanılarak sil
+                    await hiveService.init();
+                    await hiveService.removeItem(note.id);
                   },
                 ),
               );

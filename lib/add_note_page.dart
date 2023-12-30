@@ -40,14 +40,14 @@ class AddNotePage extends StatelessWidget {
 
   void addNote(BuildContext context) async {
     final hiveService = HiveService<Note>(boxName: 'notes');
-    await hiveService.init(); // HiveService'i başlat ve kutuyu aç
+    await hiveService.init();
 
     final String title = titleController.text;
     final String content = contentController.text;
 
     if (title.isNotEmpty && content.isNotEmpty) {
       final note = Note(
-        id: DateTime.now().toString(), // Benzersiz bir ID için
+        id: DateTime.now().toString(),
         title: title,
         content: content,
         createdDate: DateTime.now(),
