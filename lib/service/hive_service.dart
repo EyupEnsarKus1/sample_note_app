@@ -15,6 +15,10 @@ class HiveService<T> {
     _box = await Hive.openBox<T>(boxName);
   }
 
+  Future<void> updateItem(dynamic key, T item) async {
+    await _box.put(key, item);
+  }
+
   Box<T> getBox() {
     return _box;
   }
